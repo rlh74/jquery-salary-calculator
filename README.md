@@ -6,7 +6,7 @@ Your project description goes here. What problem did you solve? How did you solv
 # Goal
 Create an application that records employee salaries and adds salaries up to report monthly costs.
 # Project Description
-[] - create input form with inputs for first name, last name, ID, title, and salary
+[x] - create input form with inputs for first name, last name, ID, title, and salary
 [] - create a submit button
 [] - set up button to receive inputs from form
 [] - store inputs 
