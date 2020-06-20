@@ -17,6 +17,11 @@ function grabFormInput(){
     let employeeJobTitle = $('#employeeJobTitle').val();
     let employeeAnnualSalary = $('#employeeAnnualSalary').val();
     addEmployeeData(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary);
+    $('#employeeFirstName').val('');
+    $('#employeeLastName').val('');
+    $('#employeeIdNumber').val('');
+    $('#employeeJobTitle').val('');
+    $('#employeeAnnualSalary').val('');
     console.log('Array is now: ', employeeData);
 }
 
