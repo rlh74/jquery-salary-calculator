@@ -6,31 +6,20 @@ let monthlyTotal = 0;
 function addEmployeeData(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary){
     let object = {employeeFirstName,  employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary};
     employeeData.push(object);
-}
+};
 
 // append employeeData to DOM
 function appendDataToDom(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary){
-
-    $('#employeeTable').append(
-    `
-    <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>ID Number</th>
-            <th>Job Title</th>
-            <th>Annual Salary</th>
-        </tr>
+    $('#employeeTable').append(`
         <tr>
             <th> ${employeeFirstName} </th>
             <th> ${employeeLastName} </th>
-            <th> ${employeeIdNumber} </th>
+            <th> #${employeeIdNumber} </th>
             <th> ${employeeJobTitle} </th>
             <th> $${employeeAnnualSalary} </th>
         </tr>
-    </table>
-    `)
-}
+    </table>`)
+};
 
 // append monthlyTotal to DOM
 function appendTotalToDom(){
@@ -47,8 +36,10 @@ function calculateMonthlyTotal(employeeData){
     monthlyTotal = 0;
     // loops through employeeData and creates a sum of employeeAnnualSalary property
     for (let i = 0 ; i<employeeData.length;i++){
-        monthlyTotal += Number(employeeData[i].employeeAnnualSalary);
+        monthlyTotal += (Number(employeeData[i].employeeAnnualSalary) / 12);
     }   console.log('monthly total is: ', monthlyTotal);
+    // passes monthlyTotal to audit function to make sure costs do not exceed budget
+    monthlyTotalAudit();
 };
 
 // grabs inputs from form input fields
@@ -73,14 +64,21 @@ function grabFormInput(){
     $('#employeeJobTitle').val('');
     $('#employeeAnnualSalary').val('');
     // console.log('Array is now: ', employeeData); used to test if inputs were added to global array
-    // calculates monthly total
+    // calculates monthly total and appends to DOM
     calculateMonthlyTotal(employeeData);
-    // begins append to DOM functions
-    // appendDataToDom();
     appendTotalToDom();
-}
+};
+
+// checks if monthly total is under 20,000
+function monthlyTotalAudit(){
+    if (monthlyTotal > 20000){
+        console.log('In this economy?!?!');
+        // changes background color if conditional is true
+        $('body').css("background-color","red");
+    };
+};
 
 // runs when page has loaded
 function onReady(){
     $('#submitEmployeeForm').on('click', grabFormInput)
-}
+};

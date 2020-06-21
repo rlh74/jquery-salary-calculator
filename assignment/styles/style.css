@@ -3,5 +3,5 @@ body {
 }
 
 button#submitEmployeeForm {
-float: right;
+    float: inherit;
 }
