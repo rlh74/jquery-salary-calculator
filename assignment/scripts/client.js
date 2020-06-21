@@ -12,11 +12,11 @@ function addEmployeeData(employeeFirstName, employeeLastName, employeeIdNumber, 
 function appendDataToDom(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary){
     $('#employeeTable').append(`
         <tr>
-            <th> ${employeeFirstName} </th>
-            <th> ${employeeLastName} </th>
-            <th> #${employeeIdNumber} </th>
-            <th> ${employeeJobTitle} </th>
-            <th> $${employeeAnnualSalary} </th>
+            <td> ${employeeFirstName} </td>
+            <td> ${employeeLastName} </td>
+            <td> #${employeeIdNumber} </td>
+            <td> ${employeeJobTitle} </td>
+            <td> $${employeeAnnualSalary} </td>
         </tr>
     </table>`)
 };

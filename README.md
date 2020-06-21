@@ -15,7 +15,7 @@ Create an application that records employee salaries and adds salaries up to rep
 [x] - set up function to calculate monthly cost
 [x] - append monthly total to DOM
 [x] - create a condition that checks if monthly cost exceeds $20,000
-[] - if condition is true, set page background color to red.
+[x] - if condition is true, set page background color to red.
 
 # Stretch Goals (add later)
 

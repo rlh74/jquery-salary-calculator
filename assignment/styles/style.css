@@ -1,7 +1,22 @@
 body {
-    background-color: mediumspringgreen;
+    background-color: rgb(26, 116, 130);
 }
 
 button#submitEmployeeForm {
     float: inherit;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-spacing: 0px;
+
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: rgb(10, 46, 52);
+    color: white;
 }
