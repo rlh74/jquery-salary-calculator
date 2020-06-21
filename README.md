@@ -16,7 +16,9 @@ Create an application that records employee salaries and adds salaries up to rep
 [x] - append monthly total to DOM
 [x] - create a condition that checks if monthly cost exceeds $20,000
 [x] - if condition is true, set page background color to red.
+[] - add button that removes employee data from the DOM
 
 # Stretch Goals (add later)
+
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

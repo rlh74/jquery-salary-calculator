@@ -11,15 +11,18 @@ function addEmployeeData(employeeFirstName, employeeLastName, employeeIdNumber, 
 // append employeeData to DOM
 function appendDataToDom(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary){
     $('#employeeTable').append(`
-        <tr>
-            <td> ${employeeFirstName} </td>
-            <td> ${employeeLastName} </td>
-            <td> #${employeeIdNumber} </td>
-            <td> ${employeeJobTitle} </td>
-            <td> $${employeeAnnualSalary} </td>
-        </tr>
-    </table>`)
+    <tr>
+    <td> ${employeeFirstName} </td>
+    <td> ${employeeLastName} </td>
+    <td> #${employeeIdNumber} </td>
+    <td> ${employeeJobTitle} </td>
+    <td> $${employeeAnnualSalary} </td>
+    <td> <button id="deleteEmployee">Delete</button> </td>
+    </tr>
+    </table>`);
+    
 };
+
 
 // append monthlyTotal to DOM
 function appendTotalToDom(){
@@ -37,11 +40,17 @@ function calculateMonthlyTotal(employeeData){
     // loops through employeeData and creates a sum of employeeAnnualSalary property
     for (let i = 0 ; i<employeeData.length;i++){
         monthlyTotal += (Number(employeeData[i].employeeAnnualSalary) / 12);
-        monthlyTotal = monthlyTotal.toFixed(2);
-    }   console.log('monthly total is: ', monthlyTotal);
+        // monthlyTotal = monthlyTotal.toFixed(2);
+    };
+    monthlyTotal = monthlyTotal.toFixed(2); 
+    console.log('monthly total is: ', monthlyTotal);
     // passes monthlyTotal to audit function to make sure costs do not exceed budget
     monthlyTotalAudit();
 };
+function deleteEmployee(){
+    //$('#employeeTable').remove();
+    $(this).parent().parent().remove();
+}
 
 // grabs inputs from form input fields
 function grabFormInput(){
@@ -81,5 +90,7 @@ function monthlyTotalAudit(){
 
 // runs when page has loaded
 function onReady(){
-    $('#submitEmployeeForm').on('click', grabFormInput)
+    $('#submitEmployeeForm').on('click', grabFormInput);
+    $('#employeeTable').on('click', '#deleteEmployee', deleteEmployee);
+
 };
