@@ -11,8 +11,9 @@ Create an application that records employee salaries and adds salaries up to rep
 [x] - set up button to receive inputs from form
 [x] - store inputs
 [x] - clear form after subtmit is clicked
+[x] - append stored data to DOM
 [x] - set up function to calculate monthly cost
-[] - append monthly total to DOM
+[x] - append monthly total to DOM
 [] - create a condition that checks if monthly cost exceeds $20,000
 [] - if condition is true, set page background color to red.
 

@@ -8,6 +8,39 @@ function addEmployeeData(employeeFirstName, employeeLastName, employeeIdNumber, 
     employeeData.push(object);
 }
 
+// append employeeData to DOM
+function appendDataToDom(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary){
+
+    $('#employeeTable').append(
+    `
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID Number</th>
+            <th>Job Title</th>
+            <th>Annual Salary</th>
+        </tr>
+        <tr>
+            <th> ${employeeFirstName} </th>
+            <th> ${employeeLastName} </th>
+            <th> ${employeeIdNumber} </th>
+            <th> ${employeeJobTitle} </th>
+            <th> $${employeeAnnualSalary} </th>
+        </tr>
+    </table>
+    `)
+}
+
+// append monthlyTotal to DOM
+function appendTotalToDom(){
+    // empties monthlyTotal from HTML element before monthlyTotal is calculated and displayed
+    $('#monthlyTotal').empty();    
+    // console.log('we bout to append!'); tested if function ran successfully from grabFromInput function
+    // Appends total to DOM
+    $('#monthlyTotal').append(`Monthly total is: $`, monthlyTotal);
+};
+
 // prepare to step thru array to grab multiple salaries
 function calculateMonthlyTotal(employeeData){
     // makes sure monthlyTotal is 0 before the function loops through array
@@ -16,16 +49,6 @@ function calculateMonthlyTotal(employeeData){
     for (let i = 0 ; i<employeeData.length;i++){
         monthlyTotal += Number(employeeData[i].employeeAnnualSalary);
     }   console.log('monthly total is: ', monthlyTotal);
-};
-
-// append monthlyTotal to DOM
-function appendToDom(){
-    // empties monthlyTotal from HTML element before monthlyTotal is calculated and displayed
-    $('#monthlyTotal').empty();    
-    // console.log('we bout to append!'); tested if function ran successfully from grabFromInput function
-    // Appends total to DOM
-    $('#monthlyTotal').append(`Monthly total is: $`, monthlyTotal);
-    //$('#employeeTable').empty();
 };
 
 // grabs inputs from form input fields
@@ -39,6 +62,8 @@ function grabFormInput(){
     let employeeIdNumber = $('#employeeIdNumber').val();
     let employeeJobTitle = $('#employeeJobTitle').val();
     let employeeAnnualSalary = $('#employeeAnnualSalary').val();
+    // append employeeData to DOM
+    appendDataToDom(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary);
     // sends input to addEmployeeData function
     addEmployeeData(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeAnnualSalary);
     // clears input fields after user submission
@@ -50,8 +75,9 @@ function grabFormInput(){
     // console.log('Array is now: ', employeeData); used to test if inputs were added to global array
     // calculates monthly total
     calculateMonthlyTotal(employeeData);
-    // begins append to DOM function
-    appendToDom();
+    // begins append to DOM functions
+    // appendDataToDom();
+    appendTotalToDom();
 }
 
 // runs when page has loaded
