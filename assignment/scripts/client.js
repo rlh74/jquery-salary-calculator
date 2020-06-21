@@ -37,6 +37,7 @@ function calculateMonthlyTotal(employeeData){
     // loops through employeeData and creates a sum of employeeAnnualSalary property
     for (let i = 0 ; i<employeeData.length;i++){
         monthlyTotal += (Number(employeeData[i].employeeAnnualSalary) / 12);
+        monthlyTotal = monthlyTotal.toFixed(2);
     }   console.log('monthly total is: ', monthlyTotal);
     // passes monthlyTotal to audit function to make sure costs do not exceed budget
     monthlyTotalAudit();
