@@ -30,7 +30,7 @@ function appendTotalToDom(){
     $('#monthlyTotal').empty();    
     // console.log('we bout to append!'); tested if function ran successfully from grabFromInput function
     // Appends total to DOM
-    $('#monthlyTotal').append(`Monthly total is: $`, monthlyTotal);
+    $('#monthlyTotal').text(monthlyTotal);
 };
 
 // prepare to step thru array to grab multiple salaries

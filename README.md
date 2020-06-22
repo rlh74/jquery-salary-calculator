@@ -1,24 +1,44 @@
-# Project Name
+# PROJECT NAME
 JQuery Salary Calculator
+
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-# Goal
-Create an application that records employee salaries and adds salaries up to report monthly costs.
-# Project Description
-[x] - create input form with inputs for first name, last name, ID, title, and salary
-[x] - create a submit button
-[x] - set up button to receive inputs from form
-[x] - store inputs
-[x] - clear form after subtmit is clicked
-[x] - append stored data to DOM
-[x] - set up function to calculate monthly cost
-[x] - append monthly total to DOM
-[x] - create a condition that checks if monthly cost exceeds $20,000
-[x] - if condition is true, set page background color to red.
-[] - add button that removes employee data from the DOM
+_Duration: About 8 hours_
 
-# Stretch Goals (add later)
+Created an application that records employee data and generates a total monthly cost for salary.
+
+## Screen Shot
 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+### Prerequisites
+
+No required software.
+
+## Installation
+
+The application is used in a web browser, simply visit the webpage and enter data to use the app.
+
+
+## Usage
+To use the Salary Calculator, the user must: 
+
+1. Enter employee data to the text input fields.
+2. Click 'Submit' to store employee data
+3. You can use the 'Delete' button to remove an empoloyee, however this will not change the monthly salary cost that is displayed on the webpage.
+
+
+
+## Built With
+
+HTML, Javascript, JQuery, & CSS
+
+## License
+
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality and to my fellow cohort members who provided insight and helped to identify issues with the code.
+
+## Support
+If you have suggestions or issues, please find me on LinkedIn.
+
+
