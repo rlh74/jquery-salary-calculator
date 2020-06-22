@@ -9,6 +9,7 @@ Created an application that records employee data and generates a total monthly 
 
 ## Screen Shot
 
+![Wireframe](screenshot.png)
 
 ### Prerequisites
 
